@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-shell',
+  selector: 'example-login-nav-shell',
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.css']
 })

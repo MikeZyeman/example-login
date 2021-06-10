@@ -1,1 +1,43 @@
-<p>login works!</p>
+
+<div class="registration-panel">
+  <mat-card class="registration-card">
+
+    <mat-tab-group>
+      <mat-tab label="Login">
+        <div class="tab-window">
+          <form [formGroup]="loginForm">
+            <br>
+            <h1>Login</h1>
+
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Enter Username..." type="text" formControlName="username">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <button type="submit" mat-raised-button color="primary">Submit</button>
+            </p>
+          </form>
+        </div>
+      </mat-tab>
+      <mat-tab label="Registration"> Content 2 </mat-tab>
+    </mat-tab-group>
+
+
+  </mat-card>
+</div>
+
