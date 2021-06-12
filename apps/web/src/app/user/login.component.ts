@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from './auth.service';
+import { LoginUser } from '@example-login/api-interfaces';
 
 
 
@@ -26,6 +27,21 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
 
+
+    console.warn(this.loginForm.value);
+
+    /*
+    let user: LoginUser = {
+      username: this.loginForm
+    }
+
+    this.authService.login()
+      .subscribe((res) => {
+        console.log(res);
+      })
+
+     */
   }
+
 
 }
