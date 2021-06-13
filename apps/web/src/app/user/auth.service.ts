@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginUser } from '@example-login/api-interfaces';
-import { HttpService } from '@nestjs/common';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class AuthService {
   private token = "";
 
   constructor(
-    private http: HttpService
+    private http: HttpClient
   ) { }
 
   /*
