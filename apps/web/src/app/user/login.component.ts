@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from './auth.service';
-import { LoginUser } from '@example-login/api-interfaces';
+import { LoginRequest, LoginUser } from '@example-login/api-interfaces';
 
 
 
@@ -23,24 +23,29 @@ export class LoginComponent implements OnInit {
     private authService: AuthService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit() {
+    this.authService.check();
+  }
 
   onSubmit() {
 
+    console.log('submit');
 
     console.warn(this.loginForm.value);
 
-    /*
-    let user: LoginUser = {
-      username: this.loginForm
+    const user: LoginRequest = {
+      username: this.loginForm.value.username,
+      password: this.loginForm.value.password
     }
 
-    this.authService.login()
+    console.log(user);
+
+    this.authService.login(user)
       .subscribe((res) => {
         console.log(res);
       })
 
-     */
+
   }
 
 

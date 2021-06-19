@@ -1,10 +1,14 @@
 
-export interface LoginUser {
-  userid?: string;
-  username?: string;
-  email?: string;
+export interface LoginRequest {
+  username: string;
   password: string;
+}
+
+export interface LoginUser {
+  username: string;
+  email: string;
   token: string;
+
 }
 
 export interface UserDTO {

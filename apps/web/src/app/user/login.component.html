@@ -5,7 +5,7 @@
     <mat-tab-group>
       <mat-tab label="Login">
         <div class="tab-window">
-          <form [formGroup]="loginForm">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <br>
             <h1>Login</h1>
 
