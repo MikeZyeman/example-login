@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { LoginRequest, LoginUser } from '@example-login/api-interfaces';
 
@@ -13,9 +13,36 @@ import { LoginRequest, LoginUser } from '@example-login/api-interfaces';
 export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('', [
+      Validators.required
+    ]),
+    password: new FormControl('', [
+      Validators.required
+    ]),
   });
+
+  registrationForm = new FormGroup({
+    username: new FormControl('', [
+      Validators.required
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    password: new FormControl('', [
+      Validators.required
+    ]),
+    repeatPassword: new FormControl('', [
+      Validators.required
+    ])
+  }, {
+    validators: (control: AbstractControl) : ValidationErrors | null => {
+      const password = control.get('password');
+      const repeatPassword = control.get('repeatPassword')
+
+      return password && repeatPassword && password.value === repeatPassword.value ? { identityRevealed: true } : null;
+    }
+  })
 
   hide = true;
 
@@ -27,26 +54,23 @@ export class LoginComponent implements OnInit {
     this.authService.check();
   }
 
-  onSubmit() {
-
-    console.log('submit');
-
-    console.warn(this.loginForm.value);
+  onLoginSubmit() {
+    console.log('login');
 
     const user: LoginRequest = {
       username: this.loginForm.value.username,
       password: this.loginForm.value.password
     }
 
-    console.log(user);
-
     this.authService.login(user)
       .subscribe((res) => {
         console.log(res);
       })
-
-
   }
 
+  onRegistrationSubmit() {
+    console.log('registration');
+
+  }
 
 }

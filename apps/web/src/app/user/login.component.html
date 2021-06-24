@@ -5,9 +5,9 @@
     <mat-tab-group>
       <mat-tab label="Login">
         <div class="tab-window">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+
             <br>
-            <h1>Login</h1>
 
             <p>
               <mat-form-field appearance="outline">
@@ -34,10 +34,15 @@
           </form>
         </div>
       </mat-tab>
-      <mat-tab label="Registration"> Content 2 </mat-tab>
+      <mat-tab label="Registration">
+
+        <div class="tab-window">
+          <form>
+
+          </form>
+        </div>
+      </mat-tab>
     </mat-tab-group>
-
-
   </mat-card>
 </div>
 
