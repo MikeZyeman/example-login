@@ -34,6 +34,7 @@
       <div *ngIf="!(isHandset$ | async)">
 
         <a mat-button routerLink="/login">🔑 Login</a>
+        <button mat-button (click)='check()'>Check</button>
 
       </div>
 

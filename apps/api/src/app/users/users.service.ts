@@ -13,7 +13,7 @@ export class UsersService {
     },
     {
       userId: 2,
-      username: 'Mike',
+      username: 'mike',
       password: 'guess',
     },
   ];

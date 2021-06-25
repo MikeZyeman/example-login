@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { AuthService } from './auth.service';
-import { LoginRequest, LoginUser } from '@example-login/api-interfaces';
-
-
+import { LoginRequest } from '@example-login/api-interfaces';
 
 @Component({
   selector: 'example-login-login',
@@ -47,11 +45,11 @@ export class LoginComponent implements OnInit {
   hide = true;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
-    this.authService.check();
+
   }
 
   onLoginSubmit() {
@@ -63,9 +61,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(user)
-      .subscribe((res) => {
-        console.log(res);
-      })
+      .subscribe()
   }
 
   onRegistrationSubmit() {

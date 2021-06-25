@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { AuthService } from '../../user/auth.service';
 
 @Component({
   selector: 'example-login-nav-shell',
@@ -16,6 +17,13 @@ export class ShellComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private auth: AuthService
+  ) {}
 
+  check() {
+    this.auth.checkToken()
+      .subscribe()
+  }
 }

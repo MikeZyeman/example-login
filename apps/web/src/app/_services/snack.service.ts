@@ -24,4 +24,10 @@ export class SnackService {
       )
       .subscribe();
   }
+
+  loginFailed() {
+    this.snackBar.open('Username and Password combination not correct', 'OK', {
+      duration: 5000
+    });
+  }
 }
