@@ -42,7 +42,9 @@ export class LoginComponent implements OnInit {
     }
   })
 
-  hide = true;
+  loginHide = true;
+  registHide = true;
+  registRepeatHide = true;
 
   constructor(
     private authService: AuthService,

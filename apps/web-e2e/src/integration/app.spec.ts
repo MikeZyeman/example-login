@@ -10,4 +10,8 @@ describe('web', () => {
     // Function helper example, see `../support/app.po.ts` file
     getGreeting().contains('Welcome to web!');
   });
+
+  it('should log in', () => {
+
+  })
 });

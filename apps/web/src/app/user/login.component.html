@@ -20,9 +20,9 @@
             <p>
               <mat-form-field appearance="outline">
                 <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <input matInput [type]="loginHide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="loginHide = !loginHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="loginHide">
+                  <mat-icon>{{loginHide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 <mat-hint>Hint</mat-hint>
               </mat-form-field>
@@ -37,8 +37,49 @@
       <mat-tab label="Registration">
 
         <div class="tab-window">
-          <form>
+          <form [formGroup]='registrationForm' (ngSubmit)='onRegistrationSubmit()'>
 
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Enter Username..." type="text" formControlName="username">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter Email..." type="text" formControlName="email">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="registHide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="registHide = !registHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="registHide">
+                  <mat-icon>{{registHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Repeat your password</mat-label>
+                <input matInput [type]="registRepeatHide ? 'password' : 'text'" formControlName="repeatPassword">
+                <button mat-icon-button matSuffix (click)="registRepeatHide = !registRepeatHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="registRepeatHide">
+                  <mat-icon>{{registRepeatHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>Hint</mat-hint>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <button type="submit" mat-raised-button color="primary">Submit</button>
+            </p>
           </form>
         </div>
       </mat-tab>
