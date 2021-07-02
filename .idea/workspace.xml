@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6643e1c7-ba1f-4103-a734-ccaa409a3df5" name="Default Changelist" comment="Redirect implemented and docker-compose added">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_06_21,_21_45_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_06_21__21_45__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="6643e1c7-ba1f-4103-a734-ccaa409a3df5" name="Default Changelist" comment="Started e2e test">
+      <change afterPath="$PROJECT_DIR$/apps/web-e2e/cypress.env.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/web-e2e/src/integration/login.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/web-e2e/src/integration/app.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-e2e/src/integration/app.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web-e2e/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web-e2e/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/web/src/app/user/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/app/user/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/src/app/user/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/src/app/user/login.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +132,7 @@
       <workItem from="1624826636851" duration="440000" />
       <workItem from="1625119665017" duration="792000" />
       <workItem from="1625126654768" duration="594000" />
-      <workItem from="1625168569718" duration="4916000" />
+      <workItem from="1625168569718" duration="9223000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing Commit">
       <created>1620915088621</created>
@@ -162,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624603144156</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Started e2e test">
+      <created>1625175519234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625175519234</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +193,7 @@
     <MESSAGE value="Successfully accuired token" />
     <MESSAGE value="Redirect implemented" />
     <MESSAGE value="Redirect implemented and docker-compose added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redirect implemented and docker-compose added" />
+    <MESSAGE value="Started e2e test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started e2e test" />
   </component>
 </project>

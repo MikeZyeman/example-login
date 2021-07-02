@@ -12,7 +12,7 @@
             <p>
               <mat-form-field appearance="outline">
                 <mat-label>Username</mat-label>
-                <input matInput placeholder="Enter Username..." type="text" formControlName="username">
+                <input id='loginUsernameInput' matInput placeholder="Enter Username..." type="text" formControlName="username">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
               </mat-form-field>
             </p>
@@ -20,7 +20,7 @@
             <p>
               <mat-form-field appearance="outline">
                 <mat-label>Enter your password</mat-label>
-                <input matInput [type]="loginHide ? 'password' : 'text'" formControlName="password">
+                <input id='loginPasswordInput' matInput [type]="loginHide ? 'password' : 'text'" formControlName="password">
                 <button mat-icon-button matSuffix (click)="loginHide = !loginHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="loginHide">
                   <mat-icon>{{loginHide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
@@ -29,7 +29,7 @@
             </p>
 
             <p>
-              <button type="submit" mat-raised-button color="primary">Submit</button>
+              <button id="loginSubmit" type="submit" mat-raised-button color="primary">Submit</button>
             </p>
           </form>
         </div>
